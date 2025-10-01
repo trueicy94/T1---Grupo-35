@@ -13,7 +13,7 @@ public class Gerador {
     private final List<Double> predefinidos = new ArrayList<>();
     private int indice = 0;
 
-    private long usados = 0; // contador
+    private long usados = 0;
 
     public Gerador(long a, long c, double m, double semente) {
         this.a = a;

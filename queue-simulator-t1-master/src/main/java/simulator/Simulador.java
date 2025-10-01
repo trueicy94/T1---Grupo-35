@@ -57,7 +57,6 @@ public class Simulador {
         Fila destino = filas.get(e.getDestino());
 
         if (destino.tentarEntrar()) {
-            // Se entrou na fila e há servidor disponível, agenda saída
             if (destino.getClientes() <= destino.getServidores()) {
                 agenda.add(new Event(
                         tempoGlobal + destino.sorteiaTempoServico(gerador),
@@ -89,7 +88,6 @@ public class Simulador {
         Fila origem = filas.get(e.getOrigem());
         origem.sair();
 
-        // === 1. Decide destino do cliente com base nas probabilidades do YAML ===
         double u = gerador.next();
         double acumulado = 0.0;
         for (Rota rota : origem.getRotas()) {
@@ -104,12 +102,10 @@ public class Simulador {
                             destinoId
                     ));
                 }
-                // destinoId == -1 significa saída do sistema
                 break;
             }
         }
 
-        // === 2. Se ainda há clientes esperando, agenda próximo serviço ===
         if (origem.getClientes() >= origem.getServidores()) {
             agenda.add(new Event(
                     tempoGlobal + origem.sorteiaTempoServico(gerador),

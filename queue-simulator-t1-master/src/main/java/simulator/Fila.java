@@ -40,9 +40,7 @@ public class Fila {
     public void setChegadaMax(double chegadaMax) { this.chegadaMax = chegadaMax; }
 
     public int getId() { return id; }
-    public String getNome() { return nome; }
     public int getClientes() { return clientes; }
-    public int getCapacidade() { return capacidade; }
     public int getServidores() { return servidores; }
     public Map<Integer, Double> getTempoPorOcupacao() { return tempoPorOcupacao; }
     public int getPerdas() { return perdas; }
