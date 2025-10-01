@@ -1,10 +1,10 @@
-# 🧪 Simulador de Rede de Filas
+# Simulador de Rede de Filas
 
 Este projeto é um simulador de rede de filas com múltiplos servidores e roteamento probabilístico, desenvolvido em **Java 21**. Ele utiliza eventos discretos para modelar o fluxo de clientes entre diferentes filas, com base em configurações externas definidas via YAML.
 
 ---
 
-## 🛠️ Estrutura do Projeto
+## Estrutura do Projeto
 
 - **Linguagem**: Java 21  
 - **Biblioteca externa**: [SnakeYAML](https://bitbucket.org/asomov/snakeyaml) para leitura do arquivo YAML  
@@ -12,7 +12,7 @@ Este projeto é um simulador de rede de filas com múltiplos servidores e roteam
 
 ---
 
-## 📁 Arquivo `config.yml`
+## Arquivo `config.yml`
 
 O arquivo define os parâmetros da simulação:
 
