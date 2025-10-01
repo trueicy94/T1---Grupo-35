@@ -1,0 +1,51 @@
+#==============================================================================
+#  Simulação de Rede de Filas
+#==============================================================================
+
+arrivals:
+  No0: 2.0   # primeiro cliente chega no tempo 2,0
+queues:
+  No0:
+    servers: 1
+    capacity: -1
+    minArrival: 2.0
+    maxArrival: 4.0
+    minService: 1.0
+    maxService: 2.0
+  No1:
+    servers: 2
+    capacity: 5
+    minService: 4.0
+    maxService: 6.0
+  No2:
+    servers: 2
+    capacity: 10
+    minService: 5.0
+    maxService: 15.0
+
+network:
+  -  source: No0
+     target: No1
+     probability: 0.8
+  -  source: No0
+     target: No2
+     probability: 0.2
+  -  source: No1
+     target: No1
+     probability: 0.5
+  -  source: No1
+     target: No0
+     probability: 0.3
+  -  source: No1
+     target: EXIT
+     probability: 0.2
+  -  source: No2
+     target: No1
+     probability: 0.7
+  -  source: No2
+     target: EXIT
+     probability: 0.3
+
+rndnumbersPerSeed: 100000 # 100.000 aleatórios
+seeds:
+  - 258
